@@ -1,0 +1,52 @@
+.form__container{
+    top:0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0003;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease transform;
+}
+
+.form__close{
+    transform: scale(0);
+}
+
+.users__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+
+.btn__create{
+    margin-top: 1em;
+    width: auto;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    border: none;
+    font-weight: 500;
+    background-color: #555A88;
+    color: white;
+    border-radius: 0.5em;
+    transition: transform 100ms ease;
+}
+
+.btn__create:hover{
+    filter: brightness(1.3);
+    transform:scale(1.1);
+}
+
+
+.btn__create{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.users__title{
+    color: #555A88;
+}
