@@ -1,13 +1,12 @@
 import axios from "axios"
 import { useState } from "react"
 
-const useFetch = (baseUrl) => {
+const useFetch = (url) => {
 
    const [response, setResponse] = useState()
 
    //Read
    const getApi = () =>{
-    const url = `${baseUrl}/users/`
     axios.get(url)
         .then(res => setResponse(res.data))
         .catch(err => console.log(err))
@@ -15,7 +14,6 @@ const useFetch = (baseUrl) => {
 
    //Create
    const createApi = (data) =>{
-    const url = `${baseUrl}/users/`
     axios.post(url,data)
         .then(res => {
             console.log(res.data)
@@ -25,8 +23,7 @@ const useFetch = (baseUrl) => {
    } 
    //Delete
    const deleteApi = (id) =>{
-    const url = `${baseUrl}/users/${id}/` 
-    axios.delete(url)
+    axios.delete(`${url}/${id}`)
         .then(res => {
             console.log(res.data)
             setResponse(response.filter(user => user.id !== id))
@@ -36,8 +33,7 @@ const useFetch = (baseUrl) => {
 
    //Update
    const updateApi =(id, data) => {
-    const url = `${baseUrl}/users/${id}/` 
-    axios.put(url,data)
+    axios.put(`${url}/${id}`,data)
         .then(res => {
             console.log(res.data)
             setResponse(response.map(user => user.id === id ? res.data : user))

@@ -24,6 +24,7 @@ const FormUser = ({
       //Create
       createUser(data);
     }
+    
 
     reset({
       email: "",
@@ -32,6 +33,7 @@ const FormUser = ({
       last_name: "",
       birthday: "",
     });
+    setIsFormClose(true);
   };
 
   const handleExit = () => {
